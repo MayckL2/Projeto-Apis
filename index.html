@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+</head>
+<body>
+    
+    <button onclick="geraAdvice()">Gera Conselho</button>
+
+    <script>
+        // api de conselhos
+        function geraAdvice(){
+            w3.getHttpObject('https://api.adviceslip.com/advice', function(data){
+                advice= data.slip.advice
+                alert(advice)
+            })
+        }
+
+        // api teste
+        async function dnd(){
+            // https://www.dnd5eapi.co/api/ability-scores/cha
+            const response= await fetch('https://www.dnd5eapi.co/api/equipment')
+
+            console.log(response)
+
+            const data= await response.json()
+
+            console.log(data)
+
+            data.map((post)=>{
+                
+            })
+        }
+
+        dnd()
+
+        // clima de sao paulo
+        // https://api.openweathermap.org/data/2.5/weather?lat={23%C2%B0%2032%27%2056}&lon={46%C2%B0%2038%27%2020}&appid=6760684195be776d3dcf65e114086261
+        async function clima(){
+            
+        }
+    
+    </script>
+</body>
+</html>
