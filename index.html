@@ -1,49 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Consumo de API</title>
+    <link rel="icon" href="api.png">
+    <link rel="stylesheet" href="style.css">
     <script src="https://www.w3schools.com/lib/w3.js"></script>
 </head>
+
 <body>
-    
-    <button onclick="geraAdvice()">Gera Conselho</button>
+    <header>
+        <img src="api.png" alt="logo">
 
-    <script>
-        // api de conselhos
-        function geraAdvice(){
-            w3.getHttpObject('https://api.adviceslip.com/advice', function(data){
-                advice= data.slip.advice
-                alert(advice)
-            })
-        }
+        <ul>
+            <li><a href="">Advice Slip</a></li>
+            <li><a href="">Chuck Norris</a></li>
+            <li><a href="">Cachorros</a></li>
+            <li><a href="">Gatos</a></li>
+            <li><a href="">Rick and Morty</a></li>
+        </ul>
 
-        // api teste
-        async function dnd(){
-            // https://www.dnd5eapi.co/api/ability-scores/cha
-            const response= await fetch('https://www.dnd5eapi.co/api/equipment')
+        <img class="hambur" src="lista.png" alt="menu-lateral">
+    </header>
 
-            console.log(response)
+    <main>
 
-            const data= await response.json()
+        <section>
+            <h2>Api Advice Slip</h2>
 
-            console.log(data)
+            <img class="fotoConselho" src="" alt="">
+            <p class="conselho"></p>
 
-            data.map((post)=>{
-                
-            })
-        }
+            <button onclick="geraAdvice()">Gera Conselho</button>
+        </section>
 
-        dnd()
+        <hr>
 
-        // clima de sao paulo
-        // https://api.openweathermap.org/data/2.5/weather?lat={23%C2%B0%2032%27%2056}&lon={46%C2%B0%2038%27%2020}&appid=6760684195be776d3dcf65e114086261
-        async function clima(){
-            
-        }
-    
-    </script>
+        <section>
+            <h2>Api Piadas Chuck Norris</h2>
+
+            <img class="fotoChuck" src="" alt="">
+            <p class="piadaChuck"></p>
+
+            <button onclick="chuckNorris()">Gera Piada</button>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Api Sobre Cachorros</h2>
+
+            <img class="fotoDog" src="" alt="">
+            <p class="nameDog"></p>
+            <p class="vidaDog"></p>
+            <p class="tempDog"></p>
+
+            <button onclick="dogApi()">Sorteie um Cachorro</button>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Api Sobre Gatos</h2>
+
+            <img class="fotoCat" src="" alt="">
+            <p class="nameCat"></p>
+            <p class="vidaCat"></p>
+            <p class="tempCat"></p>
+
+            <button onclick="catApi()">Sorteie um Gato</button>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Api Rick and Morty</h2>
+
+            <img class="fotoRick" src="" alt="">
+            <p class="nameRick"></p>
+            <p class="oriRick"></p>
+            <p class="espiRick"></p>
+            <p class="statRick"></p>
+
+            <button onclick="rickMorty()">Sorteie um Personagem</button>
+        </section>
+    </main>
+
+
+    <footer>
+        <p>FEITO POR <a href="https://github.com/MayckL2">MAYCK LUCIANO</a></p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,23 @@
+body{
+    background-color: gray;
+    margin: 0px;
+}
+
+header{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+header img{
+    width: 100px;
+}
+header .hambur{
+    display: none;
+}
+header ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
