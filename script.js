@@ -1,97 +1,107 @@
+let menu =  document.querySelector("header ul")
+
 // api de conselhos
-// function geraAdvice(){
-//     w3.getHttpObject('https://api.adviceslip.com/advice', function(data){
-//         advice= data.slip.advice
-//         // alert(advice)
-//         document.querySelector(".conselho").innerHTML = advice
-//     })
-// }
-// // gera conselho quando abrir a pagina
-// geraAdvice()
+async function geraAdvice(){
+    // w3.getHttpObject('https://api.adviceslip.com/advice', function(data){
+    //     advice= data.slip.advice
+    //     // alert(advice)
+    //     document.querySelector(".conselho").innerHTML = advice
+    // })
+    const response = await fetch('https://api.adviceslip.com/advice')
+    const data = await response.json()
 
-// api de piadas do chuck norris
-// async function chuckNorris(){
-//     const response = await fetch('https://api.chucknorris.io/jokes/random')
+    console.log(data)
+}
+// gera conselho quando abrir a pagina
+geraAdvice()
 
-//     const data = await response.json()
+//api de piadas do chuck norris
+async function chuckNorris(){
+    const response = await fetch('https://api.chucknorris.io/jokes/random')
 
-//     let iconChuck = data.icon_url
-//     let piadaChuck = data.value
+    const data = await response.json()
 
-//     document.querySelector(".fotoChuck").src = data.icon_url
-//     document.querySelector(".piadaChuck").innerHTML = data.value
-//     console.log(data.value)
-// }
-// // gera piada quando abrir a pagina
-// chuckNorris()
+    var piadaChuck = data.value
 
-// async function dogApi(){
-//     let x = Math.floor(Math.random() * 10)
+    document.querySelector(".piadaChuck").innerHTML = piadaChuck
+}
+// gera piada quando abrir a pagina
+chuckNorris()
 
-//     const response = await fetch('https://api.thedogapi.com/v1/breeds?limit=10&page=0')
+async function dogApi(){
+    let x = Math.floor(Math.random() * 10)
 
-//     const data = await response.json()
+    const response = await fetch('https://api.thedogapi.com/v1/breeds?limit=10&page=0')
 
-//     let imgDog = data[x].image.url
-//     let nameDog = data[x].name
-//     let vidaDog = data[x].life_span
-//     let tempDog = data[x].temperament
+    const data = await response.json()
 
-//     // console.log(data[x].name)
+    let imgDog = data[x].image.url
+    let nameDog = data[x].name
+    let vidaDog = data[x].life_span
+    let tempDog = data[x].temperament
 
-//     document.querySelector(".fotoDog").src = imgDog
-//     document.querySelector(".nameDog").innerHTML = nameDog
-//     document.querySelector(".vidaDog").innerHTML = vidaDog
-//     document.querySelector(".tempDog").innerHTML = tempDog
-// }
-// // 
-// dogApi()
+    // console.log(data[x].name)
 
-// api sobre gato
-// async function catApi(){
-//     let y = Math.floor(Math.random() * 10)
+    document.querySelector(".fotoDog").src = imgDog
+    document.querySelector(".nameDog").innerHTML = nameDog
+    document.querySelector(".vidaDog").innerHTML = vidaDog
+    document.querySelector(".tempDog").innerHTML = tempDog
+}
+// 
+dogApi()
 
-//     const response = await fetch('https://api.thecatapi.com/v1/breeds?limit=10&page=0')
+//api sobre gato
+async function catApi(){
+    let y = Math.floor(Math.random() * 10)
 
-//     const data = await response.json()
+    const response = await fetch('https://api.thecatapi.com/v1/breeds?limit=10&page=0')
 
-//     let procImg = data[y].reference_image_id
-//     const responseImg = await fetch(`https://api.thecatapi.com/v1/images/search?${procImg}`)
-//     const dataImg = await responseImg.json()
+    const data = await response.json()
 
-//     const imgCat = dataImg.json
-//     let nameCat = data[y].name
-//     let vidaCat = data[y].life_span
-//     let tempCat = data[y].temperament
+    let procImg = data[y].reference_image_id
+    const responseImg = await fetch(`https://api.thecatapi.com/v1/images/search?${procImg}`)
+    const dataImg = await responseImg.json()
 
-//     document.querySelector(".fotoCat").src = dataImg[0].url
-//     document.querySelector(".nameCat").innerHTML = nameCat
-//     document.querySelector(".vidaCat").innerHTML = vidaCat
-//     document.querySelector(".tempCat").innerHTML = tempCat
-// }
-//
-// catApi()
+    const imgCat = dataImg.json
+    let nameCat = data[y].name
+    let vidaCat = data[y].life_span
+    let tempCat = data[y].temperament
 
-// async function rickMorty() {
+    document.querySelector(".fotoCat").src = dataImg[0].url
+    document.querySelector(".nameCat").innerHTML = nameCat
+    document.querySelector(".vidaCat").innerHTML = vidaCat
+    document.querySelector(".tempCat").innerHTML = tempCat
+}
 
-//     const response = await fetch('https://rickandmortyapi.com/api/character')
+catApi()
+
+async function rickMorty() {
+
+    const response = await fetch('https://rickandmortyapi.com/api/character')
     
-//     const data = await response.json()
+    const data = await response.json()
     
-//     let z = Math.floor(Math.random() * 10)
-//     console.log(data.results[z])
-//     let fotoRick = data.results[z].image
-//     let nameRick = data.results[z].name
-//     let nameOrig = data.results[z].origin.name
-//     let nameEspi = data.results[z].species
-//     let nameStat = data.results[z].status
+    let z = Math.floor(Math.random() * 10)
+    console.log(data.results[z])
+    let fotoRick = data.results[z].image
+    let nameRick = data.results[z].name
+    let nameOrig = data.results[z].origin.name
+    let nameEspi = data.results[z].species
+    let nameStat = data.results[z].status
 
-//     document.querySelector(".fotoRick").src = fotoRick
-//     document.querySelector(".nameRick").innerHTML = nameRick
-//     document.querySelector(".oriRick").innerHTML = nameOrig
-//     document.querySelector(".espiRick").innerHTML = nameEspi
-//     document.querySelector(".statRick").innerHTML = nameStat
-// }
+    document.querySelector(".fotoRick").src = fotoRick
+    document.querySelector(".nameRick").innerHTML = nameRick
+    document.querySelector(".oriRick").innerHTML = nameOrig
+    document.querySelector(".espiRick").innerHTML = nameEspi
+    document.querySelector(".statRick").innerHTML = nameStat
+}
 
-// rickMorty()
+rickMorty()
 
+function abreMenu(){
+    menu.style.right = '0%'
+}
+
+function fechaMenu(){
+    menu.style.right = '-120%'
+}

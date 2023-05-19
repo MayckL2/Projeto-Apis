@@ -10,7 +10,7 @@ body{
 }
 
 header{
-    background-color: white;
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,6 +18,9 @@ header{
 }
 header img{
     width: 70px;
+}
+header .logo{
+    margin: 0 20px;
 }
 header .hambur{
     cursor: pointer;
@@ -31,13 +34,16 @@ header ul{
     justify-content: center;
     gap: 20px;
     position: fixed;
-    right: -110%;
+    right: -120%;
     top: 0px;
-    background-color: white;
+    /* background-color: white; */
+    background-image: url(fundo\ menu.jpg);
+    background-size: cover;
     width: 100%;
     height: 100%;
     /* padding: 40px 0; */
     margin: 0px;
+    transition: all 0.5s;
 }
 header ul li{
     width: 50%;
@@ -52,7 +58,7 @@ header ul li{
 header ul li a{
     border-radius: 10px;
     text-decoration: none;
-    color: rgb(68, 0, 156);
+    color: blue;
     font-weight: bold;
     transition: all 0.5s;
     width: 100%;
@@ -68,6 +74,8 @@ header ul li a:hover{
 header ul button{
     background-color: transparent;
     border: none;
+    width: 100px;
+    height: 70px;
     color: red;
     font-size: 50px;
     cursor: pointer;
@@ -78,16 +86,41 @@ header ul button:hover{
     filter: grayscale(1);
 }
 
+#adivice{
+    grid-area: ad;
+}
+#chuck{
+    grid-area: ch;
+}
+#dog{
+    grid-area: do;
+}
+#cat{
+    grid-area: ca;
+}
+#rick{
+    grid-area: ri;
+}
+
 main{
     padding: 20px;
     display: grid;
-    grid-template-columns: auto auto;
+    /* grid-template-columns: auto auto; */
+    grid-template-areas: 
+    'ad ch'
+    'do ca'
+    'ri ri';
     gap: 20px;
     place-items: center;
 }
-@media (max-width: 950px) {
+@media (max-width: 900px) {
     main{
-        grid-template-columns: auto;
+        grid-template-areas: 
+        'ad'
+        'ch'
+        'do'
+        'ca'
+        'ri';
     }
 }
 
@@ -103,14 +136,18 @@ section{
     background-color: rgba(0, 0, 0, 0.527);
     color: white;
 }
+section h2{
+    text-align: center;
+}
 section img{
-    border: solid;
+    /* border: solid; */
     width: 80%;
     height: 200px;
     border-radius: 10px;
 }
 section p{
-    border: solid;
+    /* border: solid; */
+    text-align: center;
 }
 
 section button{

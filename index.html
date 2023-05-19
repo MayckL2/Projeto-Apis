@@ -13,19 +13,19 @@
 
 <body>
     <header>
-        <img src="api.png" alt="logo">
+        <img src="api.png" class="logo" alt="logo">
 
         <ul>
-            <li><a href="#advice">Advice Slip</a></li>
-            <li><a href="#chuck">Chuck Norris</a></li>
-            <li><a href="#dog">Cachorros</a></li>
-            <li><a href="#cat">Gatos</a></li>
-            <li><a href="#rick">Rick&Morty</a></li>
+            <li><a onclick="fechaMenu()" href="#advice">Advice Slip</a></li>
+            <li><a onclick="fechaMenu()" href="#chuck">Chuck Norris</a></li>
+            <li><a onclick="fechaMenu()" href="#dog">Cachorros</a></li>
+            <li><a onclick="fechaMenu()" href="#cat">Gatos</a></li>
+            <li><a onclick="fechaMenu()" href="#rick">Rick&Morty</a></li>
 
-            <button>x</button>
+            <button onclick="fechaMenu()">x</button>
         </ul>
 
-        <img class="hambur" src="lista.png" alt="menu-lateral">
+        <img onclick="abreMenu()" class="hambur" src="lista.png" alt="menu-lateral">
     </header>
 
     <main>
@@ -43,7 +43,7 @@
         <section id="chuck">
             <h2>Api Piadas Chuck Norris</h2>
 
-            <img class="fotoChuck" src="" alt="">
+            <img class="fotoChuck" src="chuckIcon.png" alt="">
             <p class="piadaChuck"></p>
 
             <button onclick="chuckNorris()">Gera Piada</button>
