@@ -16,11 +16,13 @@
         <img src="api.png" alt="logo">
 
         <ul>
-            <li><a href="">Advice Slip</a></li>
-            <li><a href="">Chuck Norris</a></li>
-            <li><a href="">Cachorros</a></li>
-            <li><a href="">Gatos</a></li>
-            <li><a href="">Rick and Morty</a></li>
+            <li><a href="#advice">Advice Slip</a></li>
+            <li><a href="#chuck">Chuck Norris</a></li>
+            <li><a href="#dog">Cachorros</a></li>
+            <li><a href="#cat">Gatos</a></li>
+            <li><a href="#rick">Rick&Morty</a></li>
+
+            <button>x</button>
         </ul>
 
         <img class="hambur" src="lista.png" alt="menu-lateral">
@@ -28,7 +30,7 @@
 
     <main>
 
-        <section>
+        <section id="advice">
             <h2>Api Advice Slip</h2>
 
             <img class="fotoConselho" src="" alt="">
@@ -37,9 +39,8 @@
             <button onclick="geraAdvice()">Gera Conselho</button>
         </section>
 
-        <hr>
 
-        <section>
+        <section id="chuck">
             <h2>Api Piadas Chuck Norris</h2>
 
             <img class="fotoChuck" src="" alt="">
@@ -48,42 +49,45 @@
             <button onclick="chuckNorris()">Gera Piada</button>
         </section>
 
-        <hr>
 
-        <section>
+        <section id="dog">
             <h2>Api Sobre Cachorros</h2>
 
             <img class="fotoDog" src="" alt="">
-            <p class="nameDog"></p>
-            <p class="vidaDog"></p>
-            <p class="tempDog"></p>
+            <div>
+                <p class="nameDog a"></p>
+                <p class="vidaDog b"></p>
+                <p class="tempDog c"></p>
+            </div>
 
             <button onclick="dogApi()">Sorteie um Cachorro</button>
         </section>
 
-        <hr>
 
-        <section>
+        <section id="cat">
             <h2>Api Sobre Gatos</h2>
 
             <img class="fotoCat" src="" alt="">
-            <p class="nameCat"></p>
-            <p class="vidaCat"></p>
-            <p class="tempCat"></p>
+            <div>
+                <p class="nameCat a"></p>
+                <p class="vidaCat b"></p>
+                <p class="tempCat c"></p>
+            </div>
 
             <button onclick="catApi()">Sorteie um Gato</button>
         </section>
 
-        <hr>
 
-        <section>
+        <section id="rick">
             <h2>Api Rick and Morty</h2>
 
             <img class="fotoRick" src="" alt="">
-            <p class="nameRick"></p>
-            <p class="oriRick"></p>
-            <p class="espiRick"></p>
-            <p class="statRick"></p>
+            <div>
+                <p class="nameRick"></p>
+                <p class="oriRick"></p>
+                <p class="espiRick"></p>
+                <p class="statRick"></p>
+            </div>
 
             <button onclick="rickMorty()">Sorteie um Personagem</button>
         </section>
