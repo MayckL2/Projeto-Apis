@@ -3,7 +3,8 @@ html{
 }
 body{
     /* background-color: gray; */
-    background-image: linear-gradient(blue, purple);
+    /* background-image: linear-gradient(blue, purple); */
+    background-image: url(fundoHome.png);
     background-attachment: fixed;
     margin: 0px;
     font-family: sans-serif;
@@ -15,6 +16,8 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+    position: fixed;
+    width: 100%;
 }
 header img{
     width: 70px;
@@ -25,6 +28,10 @@ header .logo{
 header .hambur{
     cursor: pointer;
     margin: 0 20px;
+    transition: all 0.5s;
+}
+header .hambur:hover{
+    filter: invert(1);
 }
 header ul{
     display: flex;
@@ -127,12 +134,13 @@ main{
 section{
     border: solid;
     width: 400px;
-    height: fit-content;
+    height: 450px;
     border-radius: 10px;
     padding: 30px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     background-color: rgba(0, 0, 0, 0.527);
     color: white;
 }
@@ -148,6 +156,10 @@ section img{
 section p{
     /* border: solid; */
     text-align: center;
+    font-weight: bold;
+}
+section p span{
+    font-weight: normal;
 }
 
 section button{
@@ -182,7 +194,10 @@ section button:hover{
     'c c';
     gap: 20px;
     width: 80%;
-    margin: 20px 0;
+    margin: 10px 0;
+}
+#cat div p, #dog div p, #rick div p{
+    margin: 0;
 }
 
 #rick div{

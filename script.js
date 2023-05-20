@@ -2,15 +2,13 @@ let menu =  document.querySelector("header ul")
 
 // api de conselhos
 async function geraAdvice(){
-    // w3.getHttpObject('https://api.adviceslip.com/advice', function(data){
-    //     advice= data.slip.advice
-    //     // alert(advice)
-    //     document.querySelector(".conselho").innerHTML = advice
-    // })
-    const response = await fetch('https://api.adviceslip.com/advice')
+    let n = Math.floor(Math.random() * 200) + 1
+    const response = await fetch('https://api.adviceslip.com/advice/'+n)
     const data = await response.json()
 
-    console.log(data)
+    let slip = data.slip.advice
+
+    document.querySelector(".conselho").innerHTML = slip
 }
 // gera conselho quando abrir a pagina
 geraAdvice()
@@ -29,9 +27,9 @@ async function chuckNorris(){
 chuckNorris()
 
 async function dogApi(){
-    let x = Math.floor(Math.random() * 10)
+    let x = Math.floor(Math.random() * 171) + 1
 
-    const response = await fetch('https://api.thedogapi.com/v1/breeds?limit=10&page=0')
+    const response = await fetch('https://api.thedogapi.com/v1/breeds?limit=171&page=0')
 
     const data = await response.json()
 
@@ -52,9 +50,9 @@ dogApi()
 
 //api sobre gato
 async function catApi(){
-    let y = Math.floor(Math.random() * 10)
+    let y = Math.floor(Math.random() * 66)+1
 
-    const response = await fetch('https://api.thecatapi.com/v1/breeds?limit=10&page=0')
+    const response = await fetch('https://api.thecatapi.com/v1/breeds?limit=66&page=0')
 
     const data = await response.json()
 
@@ -77,12 +75,15 @@ catApi()
 
 async function rickMorty() {
 
-    const response = await fetch('https://rickandmortyapi.com/api/character')
+    const response = await fetch('https://rickandmortyapi.com/api/character/?page=1')
     
     const data = await response.json()
     
-    let z = Math.floor(Math.random() * 10)
-    console.log(data.results[z])
+    let z = Math.floor(Math.random() * 19) +1
+    // let z = 19
+    
+    // console.log(data)
+
     let fotoRick = data.results[z].image
     let nameRick = data.results[z].name
     let nameOrig = data.results[z].origin.name
