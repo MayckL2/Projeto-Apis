@@ -1,20 +1,29 @@
 let menu =  document.querySelector("header ul")
+let carregando = document.querySelectorAll(".carregando")
 
 // api de conselhos
 async function geraAdvice(){
-    let n = Math.floor(Math.random() * 200) + 1
+// tela de carregando
+    carregando[0].style.display = 'block'
+
+    let n = Math.floor(Math.random() * 199) + 1
     const response = await fetch('https://api.adviceslip.com/advice/'+n)
     const data = await response.json()
 
     let slip = data.slip.advice
 
     document.querySelector(".conselho").innerHTML = slip
+
+// carregado
+    carregando[0].style.display = 'none'
 }
 // gera conselho quando abrir a pagina
 geraAdvice()
 
 //api de piadas do chuck norris
 async function chuckNorris(){
+    carregando[1].style.display = 'block'
+
     const response = await fetch('https://api.chucknorris.io/jokes/random')
 
     const data = await response.json()
@@ -22,11 +31,15 @@ async function chuckNorris(){
     var piadaChuck = data.value
 
     document.querySelector(".piadaChuck").innerHTML = piadaChuck
+
+    carregando[1].style.display = 'none'
 }
 // gera piada quando abrir a pagina
 chuckNorris()
 
 async function dogApi(){
+    carregando[2].style.display = 'block'
+
     let x = Math.floor(Math.random() * 171) + 1
 
     const response = await fetch('https://api.thedogapi.com/v1/breeds?limit=171&page=0')
@@ -44,12 +57,16 @@ async function dogApi(){
     document.querySelector(".nameDog").innerHTML = nameDog
     document.querySelector(".vidaDog").innerHTML = vidaDog
     document.querySelector(".tempDog").innerHTML = tempDog
+
+    carregando[2].style.display = 'none'
 }
 // 
 dogApi()
 
 //api sobre gato
 async function catApi(){
+    carregando[3].style.display = 'block'
+
     let y = Math.floor(Math.random() * 66)+1
 
     const response = await fetch('https://api.thecatapi.com/v1/breeds?limit=66&page=0')
@@ -69,17 +86,20 @@ async function catApi(){
     document.querySelector(".nameCat").innerHTML = nameCat
     document.querySelector(".vidaCat").innerHTML = vidaCat
     document.querySelector(".tempCat").innerHTML = tempCat
+
+    carregando[3].style.display = 'none'
 }
 
 catApi()
 
 async function rickMorty() {
-
+    carregando[4].style.display = 'block'
+    
     const response = await fetch('https://rickandmortyapi.com/api/character/?page=1')
     
     const data = await response.json()
     
-    let z = Math.floor(Math.random() * 19) +1
+    let z = Math.floor(Math.random() * 18) +1
     // let z = 19
     
     // console.log(data)
@@ -95,6 +115,8 @@ async function rickMorty() {
     document.querySelector(".oriRick").innerHTML = nameOrig
     document.querySelector(".espiRick").innerHTML = nameEspi
     document.querySelector(".statRick").innerHTML = nameStat
+
+    carregando[4].style.display = 'none'
 }
 
 rickMorty()
