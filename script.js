@@ -37,6 +37,7 @@ async function chuckNorris(){
 // gera piada quando abrir a pagina
 chuckNorris()
 
+// api sobre cachorros
 async function dogApi(){
     carregando[2].style.display = 'block'
 
@@ -63,7 +64,7 @@ async function dogApi(){
 // 
 dogApi()
 
-//api sobre gato
+//api sobre gatos
 async function catApi(){
     carregando[3].style.display = 'block'
 
@@ -92,6 +93,7 @@ async function catApi(){
 
 catApi()
 
+// api sobre rick&morty
 async function rickMorty() {
     carregando[4].style.display = 'block'
     
@@ -120,11 +122,11 @@ async function rickMorty() {
 }
 
 rickMorty()
-
+// abre menu lateral
 function abreMenu(){
     menu.style.right = '0%'
 }
-
+// fecha menu lateral
 function fechaMenu(){
     menu.style.right = '-120%'
 }
